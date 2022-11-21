@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../build/EZT.API.props" />
-</Project>
