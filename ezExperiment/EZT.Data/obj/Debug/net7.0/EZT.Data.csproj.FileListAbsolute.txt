@@ -1,0 +1,12 @@
+/Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.Data/bin/Debug/net7.0/EZT.Data.deps.json
+/Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.Data/bin/Debug/net7.0/EZT.Data.dll
+/Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.Data/bin/Debug/net7.0/EZT.Data.pdb
+/Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.Data/obj/Debug/net7.0/EZT.Data.csproj.AssemblyReference.cache
+/Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.Data/obj/Debug/net7.0/EZT.Data.GeneratedMSBuildEditorConfig.editorconfig
+/Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.Data/obj/Debug/net7.0/EZT.Data.AssemblyInfoInputs.cache
+/Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.Data/obj/Debug/net7.0/EZT.Data.AssemblyInfo.cs
+/Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.Data/obj/Debug/net7.0/EZT.Data.csproj.CoreCompileInputs.cache
+/Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.Data/obj/Debug/net7.0/EZT.Data.dll
+/Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.Data/obj/Debug/net7.0/refint/EZT.Data.dll
+/Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.Data/obj/Debug/net7.0/EZT.Data.pdb
+/Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.Data/obj/Debug/net7.0/ref/EZT.Data.dll
