@@ -1,5 +1,5 @@
 ﻿{
-  "DataRecordId": "1",
+  "DataRecordId": "102340",
   "RecordName": "federal",
   "Sections": [
     {
@@ -7,14 +7,12 @@
       "DataFields": [
         {
           "FieldName": "firstName",
-          "FieldBinding": "federal.personalinformation.firstName",
           "FieldValue": "Adam",
           "FieldType": "input",
           "DataType": "string"
         },
         {
           "FieldName": "lastName",
-          "FieldBinding": "federal.personalinformation.lastName",
           "FieldValue": "Smith",
           "FieldType": "input",
           "DataType": "string"
@@ -23,7 +21,7 @@
           "FieldName": "fullName",
           "FieldValue": "",
           "FieldType": "calculated",
-          "FataType": "string",
+          "DataType": "string",
           "CalculationExpression": "'{{federal.personalinformation.firstName}}' + ' ' + '{{federal.personalinformation.lastName}}'",
           "ExpressionToExecute": ""
         }
@@ -34,7 +32,6 @@
       "DataFields": [
         {
           "FieldName": "net",
-          "FieldBinding": "federal.income.net",
           "FieldValue": "1100",
           "FieldType": "double",
           "DataType": "int"
