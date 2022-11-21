@@ -1,0 +1,53 @@
+﻿{
+  "DataRecordId": "1",
+  "RecordName": "federal",
+  "Sections": [
+    {
+      "SectionName": "personalinformation",
+      "DataFields": [
+        {
+          "FieldName": "firstName",
+          "FieldBinding": "federal.personalinformation.firstName",
+          "FieldValue": "Adam",
+          "FieldType": "input",
+          "DataType": "string"
+        },
+        {
+          "FieldName": "lastName",
+          "FieldBinding": "federal.personalinformation.lastName",
+          "FieldValue": "Smith",
+          "FieldType": "input",
+          "DataType": "string"
+        },
+        {
+          "FieldName": "fullName",
+          "FieldValue": "",
+          "FieldType": "calculated",
+          "FataType": "string",
+          "CalculationExpression": "'{{federal.personalinformation.firstName}}' + ' ' + '{{federal.personalinformation.lastName}}'",
+          "ExpressionToExecute": ""
+        }
+      ]
+    },
+    {
+      "SectionName": "income",
+      "DataFields": [
+        {
+          "FieldName": "net",
+          "FieldBinding": "federal.income.net",
+          "FieldValue": "1100",
+          "FieldType": "double",
+          "DataType": "int"
+        },
+        {
+          "FieldName": "tax",
+          "FieldValue": "",
+          "FieldType": "calculated",
+          "DataType": "double",
+          "CalculationExpression": "{{federal.income.net}} * 0.1",
+          "ExpressionToExecute": ""
+        }
+      ]
+    }
+  ]
+}

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/luongto/Desktop/ezTaxReturnLocal/ezExperiment/EZT.Data/EZT.Data.csproj",
+      "projectUniqueName": "/Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.Data/EZT.Data.csproj",
       "projectName": "EZT.Data",
-      "projectPath": "/Users/luongto/Desktop/ezTaxReturnLocal/ezExperiment/EZT.Data/EZT.Data.csproj",
+      "projectPath": "/Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.Data/EZT.Data.csproj",
       "packagesPath": "/Users/luongto/.nuget/packages/",
-      "outputPath": "/Users/luongto/Desktop/ezTaxReturnLocal/ezExperiment/EZT.Data/obj/",
+      "outputPath": "/Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.Data/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/luongto/.nuget/NuGet/NuGet.Config"
