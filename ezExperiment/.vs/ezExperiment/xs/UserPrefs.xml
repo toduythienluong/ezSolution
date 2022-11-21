@@ -1,0 +1,6 @@
+﻿<Properties StartupConfiguration="{A4426157-998A-4CDA-989E-5602CF1BC9A2}|https">
+  <MonoDevelop.Ide.ItemProperties.EZT.Data FirstBuild="True" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.EZT.API PreferredExecutionTarget="/Applications/Google Chrome.app" FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.EZT.Model FirstBuild="True" />
+</Properties>
