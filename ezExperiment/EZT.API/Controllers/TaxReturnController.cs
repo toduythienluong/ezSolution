@@ -32,7 +32,7 @@ public class TaxReturnController : ControllerBase
     }
 
     [HttpPost]
-    [Route("CalculateDataRecord")]
+    [Route("Calculate")]
     public string CalculateDataRecord([FromBody] CalculateDataRecordRequest request)
     {
         //TODO this is just for demo
