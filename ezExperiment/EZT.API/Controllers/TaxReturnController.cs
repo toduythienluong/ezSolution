@@ -71,11 +71,12 @@ public class TaxReturnController : ControllerBase
         {
             foreach (var section in filerRecord.Sections)
             {
-                var field = section.DataFields.SingleOrDefault(f => f.FieldBinding.Equals(f.FieldBinding));
-                if (field == null)
-                    continue;
-
-                field.FieldValue = f.FieldValue;
+                foreach (var dataField in section.DataFields)
+                {
+                    if (!dataField.FieldBinding.Equals(f.FieldBinding))
+                        continue;
+                    dataField.FieldValue = f.FieldValue;
+                }
             }
         }
 
