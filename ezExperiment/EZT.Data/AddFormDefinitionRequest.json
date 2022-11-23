@@ -1,0 +1,11 @@
+﻿{
+  "formName": "interview-two",
+  "fieldDefs": [
+    {
+      "id": 1,
+      "displayText": "Last Name",
+      "datamapping": "PersonalInformation.lastName",
+      "type": "UserInput"
+    }
+  ]
+}

@@ -121,6 +121,20 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "EZT.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "EZT.Model": "1.0.0",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "bin/placeholder/EZT.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EZT.Data.dll": {}
+        }
+      },
       "EZT.Model/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -505,6 +519,11 @@
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
     },
+    "EZT.Data/1.0.0": {
+      "type": "project",
+      "path": "../EZT.Data/EZT.Data.csproj",
+      "msbuildProject": "../EZT.Data/EZT.Data.csproj"
+    },
     "EZT.Model/1.0.0": {
       "type": "project",
       "path": "../EZT.Model/EZT.Model.csproj",
@@ -513,6 +532,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "EZT.Data >= 1.0.0",
       "EZT.Model >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 7.0.0",
       "Newtonsoft.Json >= 13.0.1",
@@ -544,6 +564,9 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "/Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.Data/EZT.Data.csproj": {
+              "projectPath": "/Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.Data/EZT.Data.csproj"
+            },
             "/Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.Model/EZT.Model.csproj": {
               "projectPath": "/Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.Model/EZT.Model.csproj"
             }

@@ -5,6 +5,9 @@ using System.Text.RegularExpressions;
 using static System.Collections.Specialized.BitVector32;
 using System.Data;
 using EZT.Model;
+using System.Data.Common;
+using EZT.Data.Service;
+using Microsoft.AspNetCore.Http;
 
 namespace EZT.API.Controllers;
 
@@ -14,90 +17,150 @@ public class TaxReturnController : ControllerBase
 {
 
     private readonly ILogger<TaxReturnController> _logger;
+    private readonly IDataService _dataService;
 
-    public TaxReturnController(ILogger<TaxReturnController> logger)
+    public TaxReturnController(ILogger<TaxReturnController> logger, IDataService dataService)
     {
         _logger = logger;
+        this._dataService = dataService;
+    }
+
+    [HttpPost]
+    [Route("AddOrUpdateFormDefinition")]
+    public FormDefinition AddFormDefinition([FromBody] FormDefinition request)
+    {
+        var formDefJson = JsonSerializer.Serialize(request);
+        this._dataService.AddFormDefinition(request.FormName, formDefJson);
+        return request;
     }
 
     [HttpGet]
-    [Route("GetTaxReturns")]
-    public IEnumerable<string> GetTaxReturns()
+    [Route("GetFormDefinition/{formName}")]
+    public string GetFormDefinition(string formName)
     {
-        return new List<string>() {
-            "federal",
-            "ohio",
-            "idiana"
+        return this._dataService.GetFormDefinition(formName);
+    }
+
+    [HttpPost]
+    [Route("AddOrUpdateFilterRecord")]
+    public AddOrUpdateFilterRecordResponse AddOrUpdateFilterRecord([FromBody] AddOrUpdateFilterRecordRequest request)
+    {
+        var filerRecordId = "2022111919";
+        request.DataRecordSchema.DataRecordId = filerRecordId;
+        var json = JsonSerializer.Serialize(request.DataRecordSchema);
+
+        this._dataService.SaveFilerRecord(filerRecordId, json);
+
+        return new AddOrUpdateFilterRecordResponse
+        {
+            CustomerId = request.CustomerId,
+            FilerRecordId = filerRecordId,
+            DataRecordJson = json
         };
     }
 
     [HttpPost]
-    [Route("Calculate")]
-    public string CalculateDataRecord([FromBody] CalculateDataRecordRequest request)
+    [Route("UpdateDatafields")]
+    public FilerRecord UpdateDatafields([FromBody] UpdateDatafieldsRequest request)
     {
-        //TODO this is just for demo
+        var filerRecordId = request.FilerRecordId;
+        var filerRecordJson = this._dataService.GetFilerRecord(filerRecordId);
+        var filerRecord = JsonSerializer.Deserialize<FilerRecord>(filerRecordJson);
 
-        var dataRecord = this.getDataRecordJsonString(request.DataRecord);
-        var values = this.getDataFieldValue(dataRecord);
-
-        foreach (var section in dataRecord.Sections)
+        foreach (var f in request.DataFieldsToUpdate)
         {
-            foreach (var field in section.DataFields)
+            foreach (var section in filerRecord.Sections)
             {
-                if (!CONSTAINT.FIELDTYPE.CALCULATED.Equals(field.FieldType))
+                var field = section.DataFields.SingleOrDefault(f => f.FieldBinding.Equals(f.FieldBinding));
+                if (field == null)
                     continue;
 
-                var regex = new Regex("(?<=\\{\\{)(\\w+\\.\\w+.*?)(?=\\}\\})");
-                var replaced = field.CalculationExpression;
-                var matches = regex.Matches(replaced);
-                foreach (Match match in matches)
-                {
-                    var stringValue =
-                    replaced = replaced.Replace("{{" + match + "}}", values[match.Value]);
-                }
-
-                field.ExpressionToExecute = replaced;
-
-                var dt = new DataTable();
-                field.FieldValue = this.ExecuteExpression(field.ExpressionToExecute);
+                field.FieldValue = f.FieldValue;
             }
         }
 
-        var jsonString = JsonSerializer.Serialize(dataRecord);
-        return jsonString;
+        filerRecordJson = JsonSerializer.Serialize(filerRecord);
+        this._dataService.SaveFilerRecord(filerRecordId, filerRecordJson);
+        return filerRecord;
     }
 
-    private DataRecord getDataRecordJsonString(string postString)
+    [HttpGet]
+    [Route("GetFilerRecord/{filerRecordId}")]
+    public string GetFilerRecord(string filerRecordId)
     {
-        //TODO: to implement
+        return this._dataService.GetFilerRecord(filerRecordId);
+    }
 
-        if (!"string".Equals(postString))
-            return JsonSerializer.Deserialize<DataRecord>(postString);
+    [HttpGet]
+    [Route("GetDataForForm/{formName}/{filerRecordId}")]
+    public FormDefinition GetDataForForm(string formName, string filerRecordId)
+    {
+        var formDefJson = this._dataService.GetFormDefinition(formName);
+        var filerRecJson = this._dataService.GetFilerRecord(filerRecordId);
 
-        var mock = "{\"DataRecordId\":\"102340\",\"RecordName\":\"federal\",\"Sections\":[{\"SectionName\":\"personalinformation\",\"DataFields\":[{\"FieldName\":\"firstName\",\"FieldValue\":\"Adam\",\"FieldType\":\"input\",\"DataType\":\"string\"},{\"FieldName\":\"lastName\",\"FieldValue\":\"Smith\",\"FieldType\":\"input\",\"DataType\":\"string\"},{\"FieldName\":\"fullName\",\"FieldValue\":\"\",\"FieldType\":\"calculated\",\"DataType\":\"string\",\"CalculationExpression\":\"'{{federal.personalinformation.firstName}}' + ' ' + '{{federal.personalinformation.lastName}}'\",\"ExpressionToExecute\":\"\"}]},{\"SectionName\":\"income\",\"DataFields\":[{\"FieldName\":\"net\",\"FieldValue\":\"1100\",\"FieldType\":\"double\",\"DataType\":\"int\"},{\"FieldName\":\"tax\",\"FieldValue\":\"\",\"FieldType\":\"calculated\",\"DataType\":\"double\",\"CalculationExpression\":\"{{federal.income.net}} * 0.17\",\"ExpressionToExecute\":\"\"}]}]}";
+        var formDefinition = JsonSerializer.Deserialize<FormDefinition>(formDefJson);
+        var filerRecord = JsonSerializer.Deserialize<FilerRecord>(filerRecJson);
 
-        return JsonSerializer.Deserialize<DataRecord>(mock);
+        this.MapDataValue(formDefinition, filerRecord);
+
+        return formDefinition;
+    }
+
+    private void MapDataValue(FormDefinition formDefinition, FilerRecord filerRecord)
+    {
+        var values = this.ExtractDataValuesFromFilerRecord(filerRecord);
+        foreach (var fieldDef in formDefinition.FieldDefs)
+        {
+            fieldDef.FieldValue = values[fieldDef.Datamapping];
+        }
+    }
+
+    private Dictionary<string, string> ExtractDataValuesFromFilerRecord(FilerRecord filerRecord)
+    {
+        var dict = new Dictionary<string, string>();
+
+        foreach (var section in filerRecord.Sections)
+        {
+            foreach (var field in section.DataFields)
+            {
+                dict.Add(string.Format("{0}.{1}", section.SectionName, field.FieldName), field.FieldValue);
+            }
+        }
+
+        return dict;
+    }
+
+    [HttpPost]
+    [Route("ExecuteCalculation")]
+    public Calculation ExecuteCalculation([FromBody] ExecuteCalculationRequest request)
+    {
+        var calculation = request.Calculation;
+
+        var filerRecordId = "2022111919";
+        var filerRecJson = this._dataService.GetFilerRecord(filerRecordId);
+        var filerRecord = JsonSerializer.Deserialize<FilerRecord>(filerRecJson);
+        var dict = this.ExtractDataValuesFromFilerRecord(filerRecord);
+
+        var regex = new Regex("(?<=\\{\\{)(\\w+\\.\\w+.*?)(?=\\}\\})");
+        var matches = regex.Matches(request.Calculation.CalculationExpression);
+
+        var replaced = calculation.CalculationExpression;
+
+        foreach (Match match in matches)
+        {
+            var stringValue =
+            replaced = replaced.Replace("{{" + match + "}}", dict[match.Value]);
+        }
+
+        calculation.ExpressionToExecute = replaced;
+        var dt = new DataTable();
+        calculation.CalculatedValue = this.ExecuteExpression(calculation.ExpressionToExecute);
+        return calculation;
     }
 
     private string ExecuteExpression(string expression)
     {
         var dt = new DataTable();
         return string.Format("{0}", dt.Compute(expression, ""));
-    }
-
-    private Dictionary<string, string> getDataFieldValue(DataRecord dataRecord)
-    {
-        var dict = new Dictionary<string, string>();
-
-        var recordName = dataRecord.RecordName;
-        foreach (var section in dataRecord.Sections)
-        {
-            foreach (var field in section.DataFields)
-            {
-                dict.Add(string.Format("{0}.{1}.{2}", recordName, section.SectionName, field.FieldName), field.FieldValue);
-            }
-        }
-
-        return dict;
     }
 }

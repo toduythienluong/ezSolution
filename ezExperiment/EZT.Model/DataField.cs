@@ -11,5 +11,12 @@ namespace EZT.Model
         public string CalculationExpression { get; set; }
         public string ExpressionToExecute { get; set; }
     }
+
+    public class DataFieldNew
+    {
+        public string FieldName { get; set; }
+        public string FieldBinding { get; set; }
+        public string FieldValue { get; set; }
+    }
 }
 

@@ -10,3 +10,6 @@
 /Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.Data/obj/Debug/net7.0/refint/EZT.Data.dll
 /Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.Data/obj/Debug/net7.0/EZT.Data.pdb
 /Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.Data/obj/Debug/net7.0/ref/EZT.Data.dll
+/Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.Data/bin/Debug/net7.0/EZT.Model.dll
+/Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.Data/bin/Debug/net7.0/EZT.Model.pdb
+/Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.Data/obj/Debug/net7.0/EZT.Data.csproj.CopyComplete

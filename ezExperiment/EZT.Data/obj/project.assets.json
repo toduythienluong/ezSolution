@@ -14,6 +14,19 @@
             "related": ".xml"
           }
         }
+      },
+      "EZT.Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "bin/placeholder/EZT.Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EZT.Model.dll": {}
+        }
       }
     }
   },
@@ -44,10 +57,16 @@
         "newtonsoft.json.nuspec",
         "packageIcon.png"
       ]
+    },
+    "EZT.Model/1.0.0": {
+      "type": "project",
+      "path": "../EZT.Model/EZT.Model.csproj",
+      "msbuildProject": "../EZT.Model/EZT.Model.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "EZT.Model >= 1.0.0",
       "Newtonsoft.Json >= 13.0.1"
     ]
   },
@@ -75,7 +94,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.Model/EZT.Model.csproj": {
+              "projectPath": "/Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.Model/EZT.Model.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

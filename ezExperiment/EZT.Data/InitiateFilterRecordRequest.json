@@ -1,6 +1,6 @@
 ﻿{
   "CustomerId": "customerid",
-  "DataRecord": {
+  "DataRecordSchema": {
     "DataRecordId": "1",
     "RecordName": "federal",
     "Sections": [
@@ -10,12 +10,12 @@
           {
             "FieldName": "firstName",
             "FieldBinding": "federal.personalinformation.firstName",
-            "FieldValue": "Adam"
+            "FieldValue": ""
           },
           {
             "FieldName": "lastName",
             "FieldBinding": "federal.personalinformation.lastName",
-            "FieldValue": "Smith"
+            "FieldValue": ""
           },
           {
             "FieldName": "fullName",

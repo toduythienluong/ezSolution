@@ -1,4 +1,5 @@
 ﻿using EZT.API.Service;
+using EZT.Data.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<ITaxReturnService, TaxReturnService>();
+builder.Services.AddSingleton<IDataService, DataService>();
 
 var app = builder.Build();
 

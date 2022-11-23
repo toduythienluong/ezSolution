@@ -1,6 +1,43 @@
 ﻿<Properties StartupConfiguration="{A4426157-998A-4CDA-989E-5602CF1BC9A2}|https">
-  <MonoDevelop.Ide.ItemProperties.EZT.Data FirstBuild="True" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.API/Controllers/TaxReturnController.cs" relfile="EZT.API/Controllers/TaxReturnController.cs" line="39" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="EZT.Data/sample-filer-record.json">
+    <Files>
+      <File FileName="EZT.Data/federal.datarecord.json" Line="3" Column="4" />
+      <File FileName="EZT.API/Controllers/TaxReturnController.cs" Line="42" Column="1" />
+      <File FileName="EZT.API/Controllers/WeatherForecastController.cs" Line="32" Column="2" />
+      <File FileName="EZT.API/Program.cs" Line="19" Column="22" />
+      <File FileName="EZT.API/Message/CalculateDataRecordRequest.cs" Line="4" Column="18" />
+      <File FileName="EZT.API/Message/CalculateDataRecordRequest (copy).cs" Line="6" Column="36" />
+      <File FileName="EZT.Model/DataRecord.cs" Line="12" Column="1" />
+      <File FileName="EZT.Model/Section.cs" Line="7" Column="20" />
+      <File FileName="EZT.Model/DataField.cs" Line="4" Column="18" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ezExperiment" expanded="True">
+            <Node name="EZT.API" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Message" expanded="True" />
+            </Node>
+            <Node name="EZT.Data" expanded="True" />
+            <Node name="EZT.Model" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>"Adam" + "Smith"	</Value>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.EZT.API PreferredExecutionTarget="/Applications/Google Chrome.app" FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.EZT.Model FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.EZT.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

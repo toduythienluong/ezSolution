@@ -1,13 +1,4 @@
 {
-  "$schema": "https://json.schemastore.org/launchsettings.json",
-  "iisSettings": {
-    "windowsAuthentication": false,
-    "anonymousAuthentication": true,
-    "iisExpress": {
-      "applicationUrl": "http://localhost:34713",
-      "sslPort": 44333
-    }
-  },
   "profiles": {
     "http": {
       "commandName": "Project",
@@ -31,6 +22,14 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "EZT.API": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:61898;http://localhost:37899",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

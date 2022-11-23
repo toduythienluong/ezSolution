@@ -6,5 +6,11 @@ namespace EZT.Model
         public string SectionName { get; set; }
         public DataField[] DataFields { get; set; }
     }
+
+    public class SectionNew
+    {
+        public string SectionName { get; set; }
+        public DataFieldNew[] DataFields { get; set; }
+    }
 }
 
