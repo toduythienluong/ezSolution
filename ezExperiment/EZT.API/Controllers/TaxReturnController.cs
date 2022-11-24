@@ -132,12 +132,33 @@ public class TaxReturnController : ControllerBase
     }
 
     [HttpPost]
-    [Route("ExecuteCalculation")]
-    public Calculation ExecuteCalculation([FromBody] ExecuteCalculationRequest request)
+    [Route("ExecuteCalculationWithParameters")]
+    public Calculation ExecuteCalculationWithParameters([FromBody] ExecuteCalculationWithParameterRequest request)
+    {
+        var calculation = request.Calculation;
+        var regex = new Regex("(?<=\\{\\{)(\\w+\\w+.*?)(?=\\}\\})");
+        var matches = regex.Matches(calculation.CalculationExpression);
+        var replaced = calculation.CalculationExpression;
+
+
+        foreach (Match match in matches)
+        {
+            replaced = replaced.Replace("{{" + match + "}}", request.Parameters[match.Value]);
+        }
+
+        calculation.ExpressionToExecute = replaced;
+        var dt = new DataTable();
+        calculation.CalculatedValue = this.ExecuteExpression(calculation.ExpressionToExecute);
+        return calculation;
+    }
+
+    [HttpPost]
+    [Route("ExecuteCalculationWithFilerRecord")]
+    public Calculation ExecuteCalculationWithFilerRecord([FromBody] ExecuteCalculationRequest request)
     {
         var calculation = request.Calculation;
 
-        var filerRecordId = "2022111919";
+        var filerRecordId = request.FilerRecordId;
         var filerRecJson = this._dataService.GetFilerRecord(filerRecordId);
         var filerRecord = JsonSerializer.Deserialize<FilerRecord>(filerRecJson);
         var dict = this.ExtractDataValuesFromFilerRecord(filerRecord);
@@ -149,7 +170,6 @@ public class TaxReturnController : ControllerBase
 
         foreach (Match match in matches)
         {
-            var stringValue =
             replaced = replaced.Replace("{{" + match + "}}", dict[match.Value]);
         }
 

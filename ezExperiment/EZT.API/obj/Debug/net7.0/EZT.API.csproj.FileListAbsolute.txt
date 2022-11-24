@@ -36,3 +36,4 @@
 /Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.API/obj/Debug/net7.0/ref/EZT.API.dll
 /Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.API/bin/Debug/net7.0/EZT.Data.dll
 /Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.API/bin/Debug/net7.0/EZT.Data.pdb
+/Users/luongto/Desktop/ezTaxReturnLocal/ezSolution/ezExperiment/EZT.API/bin/Debug/net7.0/ezSolution.postman_collection.json

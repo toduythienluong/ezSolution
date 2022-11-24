@@ -74,7 +74,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"formName\": \"interview-two\",\n  \"fieldDefs\": [\n    {\n      \"displayText\": \"Last Name\",\n      \"datamapping\": \"PersonalInformation.lastName\",\n      \"type\": \"UserInput\"\n    }\n  ]\n}",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -127,13 +127,13 @@
 			"response": []
 		},
 		{
-			"name": "{3.2) TaxReturn/UpdateDatafields",
+			"name": "{3.2) TaxReturn/UpdateDataFields",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"FilerRecordId\":\"2022111919\",\n    \"DataFieldsToUpdate\": [\n        {\n            \"FieldName\": \"firstName\",\n            \"FieldBinding\": \"PersonalInformation.firstName\",\n            \"FieldValue\": \"Milan\"\n        }\n    ]\n}",
+					"raw": "{\n    \"FilerRecordId\":\"2022111919\",\n    \"DataFieldsToUpdate\": [\n        {\n            \"FieldName\": \"firstName\",\n            \"FieldBinding\": \"PersonalInformation.firstName\",\n            \"FieldValue\": \"US\"\n        }\n    ]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -156,7 +156,7 @@
 			"response": []
 		},
 		{
-			"name": "{3.2.1) TaxReturn/UpdateDatafields",
+			"name": "{3.2.1) TaxReturn/UpdateDataFields",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -194,7 +194,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"formName\": \"interview-one\",\n  \"fieldDefs\": [\n    {\n      \"displayText\": \"First Name\",\n      \"datamapping\": \"PersonalInformation.firstName\",\n      \"type\": \"UserInput\"\n    }\n  ]\n}",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -227,7 +227,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"formName\": \"interview-two\",\n  \"fieldDefs\": [\n    {\n      \"displayText\": \"Last Name\",\n      \"datamapping\": \"PersonalInformation.lastName\",\n      \"type\": \"UserInput\"\n    }\n  ]\n}",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -252,13 +252,13 @@
 			"response": []
 		},
 		{
-			"name": "(6) TaxReturn/ExecuteCalculation",
+			"name": "(6.1) TaxReturn/ExecuteCalculationWithParameters",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"Calculation\":\n      {\n          \"CalculationExpression\":\"'{{PersonalInformation.firstName}}' + '  ' + '{{PersonalInformation.lastName}}'\",\n          \"ExpressionToExecute\":\"\",\n          \"CalculatedValue\": \"\"\n      }\n}",
+					"raw": "{\n    \"Parameters\": {\n        \"param1\": \"hello\",\n        \"param2\": \"world\"\n    },\n  \"Calculation\":\n      {\n          \"CalculationExpression\":\"'{{param1}}' + ' ---- ' + '{{param2}}'\"\n      }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -266,7 +266,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://localhost:7250/TaxReturn/ExecuteCalculation",
+					"raw": "https://localhost:7250/TaxReturn/ExecuteCalculationWithParameters",
 					"protocol": "https",
 					"host": [
 						"localhost"
@@ -274,7 +274,36 @@
 					"port": "7250",
 					"path": [
 						"TaxReturn",
-						"ExecuteCalculation"
+						"ExecuteCalculationWithParameters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(6.2) TaxReturn/ExecuteCalculationWithFilerRecord",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"FilerRecordId\": \"2022111919\",\n    \"Calculation\":\n      {\n          \"CalculationExpression\":\"'{{PersonalInformation.firstName}}' + '  ' + '{{PersonalInformation.lastName}}'\"\n      }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7250/TaxReturn/ExecuteCalculationWithFilerRecord",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7250",
+					"path": [
+						"TaxReturn",
+						"ExecuteCalculationWithFilerRecord"
 					]
 				}
 			},
