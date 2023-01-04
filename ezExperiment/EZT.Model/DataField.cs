@@ -18,5 +18,13 @@ namespace EZT.Model
         public string FieldBinding { get; set; }
         public string FieldValue { get; set; }
     }
+
+    public class DemoDataField
+    {
+        public string FieldId { get; set; }
+        public string FieldName { get; set; }
+        public string FieldValue { get; set; }
+        public string FieldType { get; set; }
+    }
 }
 

@@ -26,7 +26,7 @@ public class TaxReturnController : ControllerBase
     }
 
     [HttpPost]
-    [Route("AddOrUpdateFormDefinition")]
+    [Route("FormDefinition")]
     public FormDefinition AddFormDefinition([FromBody] FormDefinition request)
     {
         var formDefJson = JsonSerializer.Serialize(request);
@@ -35,15 +35,15 @@ public class TaxReturnController : ControllerBase
     }
 
     [HttpGet]
-    [Route("GetFormDefinition/{formName}")]
+    [Route("FormDefinition/{formName}")]
     public string GetFormDefinition(string formName)
     {
         return this._dataService.GetFormDefinition(formName);
     }
 
     [HttpPost]
-    [Route("AddOrUpdateFilterRecord")]
-    public AddOrUpdateFilterRecordResponse AddOrUpdateFilterRecord([FromBody] AddOrUpdateFilterRecordRequest request)
+    [Route("FilerRecord")]
+    public AddOrUpdateFilerRecordResponse AddOrUpdateFilterRecord([FromBody] AddOrUpdateFilterRecordRequest request)
     {
         var filerRecordId = "2022111919";
         request.DataRecordSchema.DataRecordId = filerRecordId;
@@ -51,7 +51,7 @@ public class TaxReturnController : ControllerBase
 
         this._dataService.SaveFilerRecord(filerRecordId, json);
 
-        return new AddOrUpdateFilterRecordResponse
+        return new AddOrUpdateFilerRecordResponse
         {
             CustomerId = request.CustomerId,
             FilerRecordId = filerRecordId,
@@ -60,7 +60,7 @@ public class TaxReturnController : ControllerBase
     }
 
     [HttpPost]
-    [Route("UpdateDatafields")]
+    [Route("DataFields")]
     public FilerRecord UpdateDatafields([FromBody] UpdateDatafieldsRequest request)
     {
         var filerRecordId = request.FilerRecordId;
@@ -86,14 +86,14 @@ public class TaxReturnController : ControllerBase
     }
 
     [HttpGet]
-    [Route("GetFilerRecord/{filerRecordId}")]
+    [Route("FilerRecord/{filerRecordId}")]
     public string GetFilerRecord(string filerRecordId)
     {
         return this._dataService.GetFilerRecord(filerRecordId);
     }
 
     [HttpGet]
-    [Route("GetDataForForm/{formName}/{filerRecordId}")]
+    [Route("Form/{formName}/{filerRecordId}")]
     public FormDefinition GetDataForForm(string formName, string filerRecordId)
     {
         var formDefJson = this._dataService.GetFormDefinition(formName);
@@ -132,7 +132,7 @@ public class TaxReturnController : ControllerBase
     }
 
     [HttpPost]
-    [Route("ExecuteCalculationWithParameters")]
+    [Route("Formular/Calculation")]
     public Calculation ExecuteCalculationWithParameters([FromBody] ExecuteCalculationWithParameterRequest request)
     {
         var calculation = request.Calculation;
@@ -153,7 +153,7 @@ public class TaxReturnController : ControllerBase
     }
 
     [HttpPost]
-    [Route("ExecuteCalculationWithFilerRecord")]
+    [Route("FilerRecord/Calculation")]
     public Calculation ExecuteCalculationWithFilerRecord([FromBody] ExecuteCalculationRequest request)
     {
         var calculation = request.Calculation;

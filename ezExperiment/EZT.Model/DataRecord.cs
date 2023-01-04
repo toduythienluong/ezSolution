@@ -14,5 +14,11 @@ namespace EZT.Model
         public string RecordName { get; set; }
         public SectionNew[] Sections { get; set; }
     }
+
+    public class DemoFilerRecord
+    {
+        public string FilerId { get; set; }
+        public DemoSection[] Sections { get; set; }
+    }
 }
 

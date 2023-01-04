@@ -7,7 +7,6 @@ namespace EZT.API.Message
     {
         public string CustomerId { get; set; }
         public FilerRecord DataRecordSchema { get; set; }
-
     }
 }
 

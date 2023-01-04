@@ -1,0 +1,606 @@
+{
+	"info": {
+		"_postman_id": "3f5f2a9d-0388-4af8-95e2-8778ff1de002",
+		"name": "ezSolution",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "467812"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": []
+		},
+		{
+			"name": "TaxReturn",
+			"item": [
+				{
+					"name": "Demo",
+					"item": [
+						{
+							"name": "demo/form",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"formName\": \"interview-one\",\n  \"formId\" : \"23423423423\",\n  \"fieldDefs\": [\n    {\n        \"fieldId\": \"200111\",\n        \"fieldName\": \"firstName\",\n        \"displayText\": \"First Name\",\n        \"datamapping\": \"PersonalInformation.firstName\",\n        \"type\": \"string\",\n        \"fieldValue\": \"string\",\n        \"inputType\": \"textbox\"\n    },\n    {\n        \"fieldId\": \"200112\",\n        \"fieldName\": \"lastName\",\n        \"displayText\": \"Last Name\",\n        \"datamapping\": \"PersonalInformation.lastName\",\n        \"type\": \"string\",\n        \"fieldValue\": \"string\",\n        \"inputType\": \"textbox\"\n    },\n    {\n        \"fieldId\": \"200113\",\n        \"fieldName\": \"fullName\",\n        \"displayText\": \"Full Name\",\n        \"datamapping\": \"PersonalInformation.fullName\",\n        \"type\": \"string\",\n        \"fieldValue\": \"string\",\n        \"inputType\": \"calculation\",\n        \"CalculationExpression\":\"'{{firstName}}' + ' --QUATAR-- ' + '{{lastName}}' + ' ' + 123*5\",\n        \"event\": \"OnLoad\"\n    }\n\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/demo/form",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"demo",
+										"form"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "demo/form",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"formName\": \"interview-two\",\n  \"formId\" : \"23423423423\",\n  \"fieldDefs\": [\n    {\n        \"fieldId\": \"200111\",\n        \"fieldName\": \"firstName\",\n        \"displayText\": \"First Name\",\n        \"datamapping\": \"PersonalInformation.firstName\",\n        \"type\": \"string\",\n        \"fieldValue\": \"string\",\n        \"inputType\": \"textbox\"\n    },\n    {\n        \"fieldId\": \"200112\",\n        \"fieldName\": \"lastName\",\n        \"displayText\": \"Last Name\",\n        \"datamapping\": \"PersonalInformation.lastName\",\n        \"type\": \"string\",\n        \"fieldValue\": \"string\",\n        \"inputType\": \"textbox\"\n    },\n    {\n        \"fieldId\": \"200113\",\n        \"fieldName\": \"fullName\",\n        \"displayText\": \"Full Name\",\n        \"datamapping\": \"PersonalInformation.fullName\",\n        \"type\": \"string\",\n        \"fieldValue\": \"string\",\n        \"inputType\": \"calculation\",\n        \"CalculationExpression\":\"'{{firstName}}' + ' --QUATAR-- ' + '{{lastName}}' + ' ' + 123*5\",\n        \"event\": \"OnLoad\"\n    }\n\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/demo/form",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"demo",
+										"form"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "demo/form/{formId}",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/demo/form/23423423423",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"demo",
+										"form",
+										"23423423423"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "demo/filer-record",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"filerId\": \"200123467\",\n  \"Sections\": [\n      {\n        \"SectionId\" : \"987475\",\n        \"SectionName\": \"PersonalInformation\",\n        \"DataFields\": [\n          {\n            \"FieldId\": \"1\",\n            \"FieldName\": \"firstName\",\n            \"FieldValue\": \"\",\n            \"FieldType\": \"string\"\n          },\n          {\n            \"FieldId\": \"2\",\n            \"FieldName\": \"lastName\",\n            \"FieldValue\": \"\",\n            \"FieldType\": \"string\"\n          },\n          {\n            \"FieldId\": \"3\",\n            \"FieldName\": \"fullName\",\n            \"FieldValue\": \"\",\n            \"FieldType\": \"string\"\n          }\n        ]\n      }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/demo/filer-record",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"demo",
+										"filer-record"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "demo/filer-record/{filerId}",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/demo/filer-record/200123467",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"demo",
+										"filer-record",
+										"200123467"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "demo/filer-record/200123467/field",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": " {\n    \"sectionId\": \"987475\",\n    \"DataField\":{\n        \"fieldId\": \"4\",\n        \"fieldName\": \"Salutation\",              \n        \"fieldValue\": \"Mr.\",\n        \"fieldType\": \"string\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/demo/filer-record/200123467/field",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"demo",
+										"filer-record",
+										"200123467",
+										"field"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "demo/form/{formId}/execution",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"filerId\" : \"200123467\",\n  \"parameters\": {\n        \"firstName\": \"hello\",\n        \"lastName\": \"world\"\n    },\n  \"fireEvents\": \"[\\\"OnLoad\\\",\\\"OnSubmit\\\"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/demo/form/23423423423/execution",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"demo",
+										"form",
+										"23423423423",
+										"execution"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "demo/script",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"scriptId\": \"1\",\n    \"code\": \"var _service = new Service(\\\"filer-record\\\"); result = _service.LoadById(Session.Filer.GetId()); var first_name = _service.Get(\\\"PersionalInformation.FirstName\\\"); result = _service.Set(\\\"PersonalInformation.FullName\\\",full_name); result = _service.Commit();\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/demo/script",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"demo",
+										"script"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "demo/script/{scriptId}/execution",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"SessionId\": \"123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/demo/script/1/execution",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"demo",
+										"script",
+										"1",
+										"execution"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "v.1.0",
+					"item": [
+						{
+							"name": "(1.2) TaxReturn/FormDefinition - Form 2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"formName\": \"interview-two\",\n  \"fieldDefs\": [\n    {\n      \"displayText\": \"Last Name\",\n      \"datamapping\": \"PersonalInformation.lastName\",\n      \"type\": \"UserInput\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/TaxReturn/FormDefinition",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"TaxReturn",
+										"FormDefinition"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "(1.3) TaxReturn/FormDefinition - Form 3",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"formName\": \"interview-three\",\n  \"fieldDefs\": [\n    {\n      \"displayText\": \"Full Name\",\n      \"datamapping\": \"PersonalInformation.fullName\",\n      \"type\": \"Calculated\",\n      \"CalculationExpression\":\"'{{param1}}' + ' --QUATAR-- ' + '{{param2}}' + 123*5\",\n      \"Event\" : \"onLoad\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/TaxReturn/FormDefinition",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"TaxReturn",
+										"FormDefinition"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "(2) TaxReturn/FormDefinition/interview-one",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/TaxReturn/FormDefinition/interview-one",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"TaxReturn",
+										"FormDefinition",
+										"interview-one"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "(3.1) TaxReturn/FilerRecord",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"CustomerId\": \"customer-one\",\n  \"DataRecordSchema\": {\n    \"DataRecordId\": \"\",\n    \"RecordName\": \"federal\",\n    \"Sections\": [\n      {\n        \"SectionName\": \"PersonalInformation\",\n        \"DataFields\": [\n          {\n            \"FieldName\": \"firstName\",\n            \"FieldBinding\": \"PersonalInformation.firstName\",\n            \"FieldValue\": \"\"\n          },\n          {\n            \"FieldName\": \"lastName\",\n            \"FieldBinding\": \"PersonalInformation.lastName\",\n            \"FieldValue\": \"\"\n          },\n          {\n            \"FieldName\": \"fullName\",\n            \"FieldBinding\": \"PersonalInformation.fullName\",\n            \"FieldValue\": \"\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/TaxReturn/FilerRecord",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"TaxReturn",
+										"FilerRecord"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "(3.2) TaxReturn/FilerRecord/2022111919",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/TaxReturn/FilerRecord/2022111919",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"TaxReturn",
+										"FilerRecord",
+										"2022111919"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "{4.1) TaxReturn/DataFields",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"FilerRecordId\":\"2022111919\",\n    \"DataFieldsToUpdate\": [\n        {\n            \"FieldName\": \"firstName\",\n            \"FieldBinding\": \"PersonalInformation.firstName\",\n            \"FieldValue\": \"USA\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/TaxReturn/DataFields",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"TaxReturn",
+										"DataFields"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "{4.2) TaxReturn/DataFields",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"FilerRecordId\":\"2022111919\",\n    \"DataFieldsToUpdate\": [\n        {\n            \"FieldName\": \"fullName\",\n            \"FieldBinding\": \"PersonalInformation.fullName\",\n            \"FieldValue\": \"United States\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/TaxReturn/DataFields",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"TaxReturn",
+										"DataFields"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "(5) TaxReturn/Form/interview-one/2022111919",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/TaxReturn/Form/interview-one/2022111919",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"TaxReturn",
+										"Form",
+										"interview-one",
+										"2022111919"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "(6.1) TaxReturn/Formular/Calculation",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Parameters\": {\n        \"param1\": \"hello\",\n        \"param2\": \"world\"\n    },\n  \"Calculation\":\n      {\n          \"CalculationExpression\":\"'{{param1}}' + ' --QUATAR-- ' + '{{param2}}' + ' -> '+ 123*5\"\n      }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/TaxReturn/Formular/Calculation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"TaxReturn",
+										"Formular",
+										"Calculation"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "(6.2) TaxReturn/FilerRecord/Calculation",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"FilerRecordId\": \"2022111919\",\n    \"Calculation\":\n      {\n          \"CalculationExpression\":\"'{{PersonalInformation.firstName}}' + '  ' + '{{PersonalInformation.lastName}}'\"\n      }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/TaxReturn/FilerRecord/Calculation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"TaxReturn",
+										"FilerRecord",
+										"Calculation"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "(1.1) TaxReturn/FormDefinition - Form 1",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"formName\": \"interview-one\",\n  \"fieldDefs\": [\n    {\n      \"displayText\": \"First Name\",\n      \"datamapping\": \"PersonalInformation.firstName\",\n      \"type\": \"UserInput\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/TaxReturn/FormDefinition",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"TaxReturn",
+										"FormDefinition"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "WorkflowEngine",
+			"item": []
+		},
+		{
+			"name": "FormDesigner",
+			"item": []
+		}
+	]
+}

@@ -12,5 +12,12 @@ namespace EZT.Model
         public string SectionName { get; set; }
         public DataFieldNew[] DataFields { get; set; }
     }
+
+    public class DemoSection
+    {
+        public string SectionId { get; set; }
+        public string SectionName { get; set; }
+        public List<DemoDataField> DataFields { get; set; }
+    }
 }
 
