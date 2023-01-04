@@ -1,0 +1,2046 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "2023-01-03T14:19:32Z",
+    "title" : "/portal-api"
+  },
+  "host" : "uyulnfo8gj.execute-api.ap-southeast-1.amazonaws.com",
+  "basePath" : "/portal-test",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/calculation" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "calculationmodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/calculationmodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/calculationmodel"
+            }
+          }
+        }
+      }
+    },
+    "/calculation/coupon" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "couponmodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/couponmodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/couponmodel"
+            }
+          }
+        }
+      }
+    },
+    "/coupon" : {
+      "get" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/couponmodels"
+            }
+          }
+        },
+        "security" : [ {
+          "eztaxreturn_auth" : [ ]
+        } ]
+      },
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "couponmodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/couponmodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/defaultmodel"
+            }
+          }
+        },
+        "security" : [ {
+          "eztaxreturn_auth" : [ ]
+        } ]
+      }
+    },
+    "/coupon/{id}" : {
+      "get" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/couponmodel"
+            }
+          }
+        }
+      },
+      "put" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "couponmodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/couponmodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/filerrecord" : {
+      "get" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            }
+          }
+        }
+      },
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "filerrecordmodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/filerrecordmodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/filerrecord/{id}" : {
+      "get" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/filerrecordmodel"
+            }
+          }
+        }
+      },
+      "put" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "filerrecordmodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/filerrecordmodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/defaultmodel"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/group" : {
+      "get" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/usermodels"
+            }
+          }
+        }
+      },
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "groupmodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/groupmodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/group/{id}" : {
+      "get" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/groupmodel"
+            }
+          }
+        }
+      },
+      "put" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "groupmodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/groupmodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/defaultmodel"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/login" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "loginrequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/loginrequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/tokenmodelres"
+            }
+          }
+        }
+      }
+    },
+    "/offer" : {
+      "get" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/offermodels"
+            }
+          }
+        }
+      },
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "offermodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/offermodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/offer/{id}" : {
+      "get" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/offermodel"
+            }
+          }
+        }
+      },
+      "put" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "offermodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/offermodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/defaultmodel"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/otp/change_password" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "optchangepasswordmodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/optchangepasswordmodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/otp/validation" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "otpmodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/otpmodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/payment" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "paymentmodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/paymentmodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            }
+          }
+        }
+      }
+    },
+    "/payment/free_filer" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            }
+          }
+        }
+      }
+    },
+    "/payment/method" : {
+      "get" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            }
+          }
+        }
+      },
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            }
+          }
+        }
+      }
+    },
+    "/payment/refundlist" : {
+      "get" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/refundbankmodels"
+            }
+          }
+        }
+      }
+    },
+    "/payment/submission" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "paymentmodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/paymentmodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            }
+          }
+        }
+      }
+    },
+    "/permission" : {
+      "get" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/permissionmodels"
+            }
+          }
+        }
+      },
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "permissionmodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/permissionmodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/permissionmodel"
+            }
+          }
+        }
+      }
+    },
+    "/permission/{id}" : {
+      "get" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/permissionmodel"
+            }
+          }
+        }
+      },
+      "put" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "permissionmodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/permissionmodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/permissionmodel"
+            }
+          }
+        }
+      }
+    },
+    "/role" : {
+      "get" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/rolemodels"
+            }
+          }
+        }
+      },
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "rolemodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/rolemodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            }
+          }
+        }
+      }
+    },
+    "/role/{id}" : {
+      "get" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/rolemodel"
+            }
+          }
+        }
+      },
+      "put" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/defaultmodel"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/signout" : {
+      "get" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/defaultmodel"
+            }
+          }
+        },
+        "security" : [ {
+          "eztaxreturn_auth" : [ ]
+        } ]
+      }
+    },
+    "/system" : {
+      "get" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            }
+          }
+        },
+        "security" : [ {
+          "eztaxreturn_auth" : [ ]
+        } ]
+      },
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            }
+          }
+        },
+        "security" : [ {
+          "eztaxreturn_auth" : [ ]
+        } ]
+      },
+      "put" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            }
+          }
+        },
+        "security" : [ {
+          "eztaxreturn_auth" : [ ]
+        } ]
+      }
+    },
+    "/system/{id}" : {
+      "get" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            }
+          }
+        }
+      },
+      "put" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            }
+          }
+        }
+      }
+    },
+    "/taxreturn" : {
+      "get" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/taxreturnmodels"
+            }
+          }
+        }
+      },
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "taxreturnmodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/taxreturnmodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/taxreturn/turbotaxfile" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "turbotaxfilemodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/turbotaxfilemodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/turbotaxfileresponsemodel"
+            }
+          }
+        }
+      }
+    },
+    "/taxreturn/{id}" : {
+      "get" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/taxreturnmodel"
+            }
+          }
+        }
+      },
+      "put" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "taxreturnmodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/taxreturnmodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/taxreturnmodel"
+            }
+          }
+        }
+      }
+    },
+    "/taxreturn/{id}/clone" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "turbotaxfilemodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/turbotaxfilemodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            }
+          }
+        }
+      }
+    },
+    "/taxreturn/{id}/clone/{turbotaxfileid}" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "turbotaxfileid",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "cloneturbotaxfilemodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/cloneturbotaxfilemodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/user" : {
+      "get" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "usermodels",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/usermodels"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            }
+          }
+        }
+      },
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "usermodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/usermodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/user/authentication" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "loginrequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/loginrequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/user/forgot-name" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "forgotusernamemodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/forgotusernamemodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/user/forgot-password" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "forgotmodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/forgotmodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/user/otp/change-password" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "optchangepasswordmodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/optchangepasswordmodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/user/otp/validation" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "otpmodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/otpmodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/user/{id}" : {
+      "get" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/usermodel"
+            }
+          }
+        }
+      },
+      "put" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "usermodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/usermodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/defaultmodel"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/user/{id}/change-password" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "changepassmodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/changepassmodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/changepassmodel"
+            }
+          }
+        }
+      }
+    },
+    "/whitelist" : {
+      "get" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/whitelistmodels"
+            }
+          }
+        }
+      },
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "whitelistmodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/whitelistmodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    },
+    "/whitelist/validation" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "whitelistmodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/whitelistmodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            }
+          }
+        }
+      }
+    },
+    "/whitelist/{id}" : {
+      "get" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/whitelistmodel"
+            }
+          }
+        }
+      },
+      "put" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "whitelistmodel",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/whitelistmodel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/defaultmodel"
+            }
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions" : {
+    "eztaxreturn_auth" : {
+      "type" : "apiKey",
+      "name" : "Authorization",
+      "in" : "header",
+      "x-amazon-apigateway-authtype" : "cognito_user_pools"
+    }
+  },
+  "definitions" : {
+    "usermodel" : {
+      "type" : "object",
+      "properties" : {
+        "user_name" : {
+          "type" : "string"
+        },
+        "first_name" : {
+          "type" : "string"
+        },
+        "last_name" : {
+          "type" : "string"
+        },
+        "full_name" : {
+          "type" : "string"
+        },
+        "SSN" : {
+          "type" : "number"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "group_id" : {
+          "type" : "string"
+        },
+        "role_id" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "boolean"
+        },
+        "password" : {
+          "type" : "string"
+        },
+        "day_phone" : {
+          "type" : "string"
+        },
+        "cell_phone" : {
+          "type" : "string"
+        }
+      },
+      "title" : "usermodel Schema"
+    },
+    "usermodels" : {
+      "type" : "object",
+      "properties" : {
+        "users" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/usermodel"
+          }
+        }
+      },
+      "title" : "usermodels schema"
+    },
+    "changepassmodel" : {
+      "type" : "object",
+      "properties" : {
+        "current_password" : {
+          "type" : "string"
+        },
+        "new_password" : {
+          "type" : "string"
+        },
+        "retype_password" : {
+          "type" : "string"
+        }
+      },
+      "title" : "changepassmodel Schema"
+    },
+    "filerrecordmodel" : {
+      "type" : "object",
+      "properties" : {
+        "user_name" : {
+          "type" : "string"
+        },
+        "first_name" : {
+          "type" : "string"
+        },
+        "last_name" : {
+          "type" : "string"
+        },
+        "full_name" : {
+          "type" : "string"
+        },
+        "SSN" : {
+          "type" : "number"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "group_id" : {
+          "type" : "string"
+        },
+        "role_id" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "boolean"
+        },
+        "day_phone" : {
+          "type" : "string"
+        },
+        "cell_phone" : {
+          "type" : "string"
+        }
+      },
+      "title" : "filerrecordmodel Schema"
+    },
+    "taxreturnmodels" : {
+      "type" : "object",
+      "properties" : {
+        "taxreturns" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/taxreturnmodel"
+          }
+        }
+      },
+      "title" : "taxreturnmodels schema"
+    },
+    "paymentmodel" : {
+      "type" : "object",
+      "properties" : {
+        "tranaction_id" : {
+          "type" : "string"
+        },
+        "date" : {
+          "type" : "string"
+        },
+        "card_type" : {
+          "type" : "string"
+        },
+        "card_number" : {
+          "type" : "string"
+        },
+        "holder_name" : {
+          "type" : "string"
+        },
+        "expired_month" : {
+          "type" : "number"
+        },
+        "expired_year" : {
+          "type" : "number"
+        },
+        "cvc" : {
+          "type" : "number"
+        },
+        "payment_amount" : {
+          "type" : "number"
+        },
+        "coupon_discount" : {
+          "type" : "number"
+        },
+        "other_discount" : {
+          "type" : "number"
+        },
+        "offer_name" : {
+          "type" : "number"
+        },
+        "offer_id" : {
+          "type" : "number"
+        },
+        "payment_status" : {
+          "type" : "string"
+        },
+        "filer_record_id" : {
+          "type" : "string"
+        },
+        "ssn" : {
+          "type" : "string"
+        },
+        "receipt_number" : {
+          "type" : "string"
+        }
+      },
+      "title" : "paymentmodel Schema"
+    },
+    "defaultmodel" : {
+      "type" : "object",
+      "properties" : {
+        "status_code" : {
+          "type" : "number"
+        },
+        "message" : {
+          "type" : "string"
+        }
+      },
+      "title" : "defaultmodel Schema"
+    },
+    "permissionmodels" : {
+      "type" : "object",
+      "properties" : {
+        "permissions" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/permissionmodel"
+          }
+        }
+      },
+      "title" : "permissionmodels schema"
+    },
+    "loginrequest" : {
+      "type" : "object",
+      "properties" : {
+        "user_name" : {
+          "type" : "string"
+        },
+        "password" : {
+          "type" : "string"
+        }
+      },
+      "title" : "loginrequest Schema"
+    },
+    "optchangepasswordmodel" : {
+      "type" : "object",
+      "properties" : {
+        "otp_code" : {
+          "type" : "string"
+        },
+        "new_password" : {
+          "type" : "string"
+        },
+        "retype_password" : {
+          "type" : "string"
+        }
+      },
+      "title" : "optchangepasswordmodel Schema"
+    },
+    "Empty" : {
+      "type" : "object",
+      "title" : "Empty Schema"
+    },
+    "couponmodel" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "coupon_code" : {
+          "type" : "string"
+        },
+        "partner_type" : {
+          "type" : "string"
+        },
+        "organization_name" : {
+          "type" : "string"
+        },
+        "amount" : {
+          "type" : "number"
+        },
+        "rate" : {
+          "type" : "string"
+        },
+        "user_name" : {
+          "type" : "string"
+        },
+        "ssn" : {
+          "type" : "string"
+        },
+        "expired_date" : {
+          "type" : "string"
+        },
+        "offer_name" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "boolean"
+        }
+      },
+      "title" : "couponmodel Schema"
+    },
+    "whitelistmodels" : {
+      "type" : "object",
+      "properties" : {
+        "whitelist" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/whitelistmodel"
+          }
+        }
+      },
+      "title" : "whitelistmodels schema"
+    },
+    "whitelistmodel" : {
+      "type" : "object",
+      "properties" : {
+        "whitelist_type" : {
+          "type" : "string"
+        },
+        "id" : {
+          "type" : "string"
+        },
+        "ssn" : {
+          "type" : "string"
+        },
+        "user_name" : {
+          "type" : "string"
+        },
+        "card_type" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "value" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "string"
+        }
+      },
+      "title" : "whitelistmodel Schema"
+    },
+    "otpmodel" : {
+      "type" : "object",
+      "properties" : {
+        "otp_code" : {
+          "type" : "string"
+        }
+      },
+      "title" : "otpmodel Schema"
+    },
+    "forgotusernamemodel" : {
+      "type" : "object",
+      "properties" : {
+        "email_address" : {
+          "type" : "string"
+        }
+      },
+      "title" : "forgotusernamemodel Schema"
+    },
+    "cloneturbotaxfilemodel" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "turbo_taxfileid" : {
+          "type" : "string"
+        },
+        "tax_year" : {
+          "type" : "string"
+        },
+        "user_name" : {
+          "type" : "string"
+        },
+        "options" : {
+          "type" : "object",
+          "properties" : {
+            "additionalProp1" : {
+              "type" : "string"
+            },
+            "additionalProp2" : {
+              "type" : "string"
+            },
+            "additionalProp3" : {
+              "type" : "number"
+            }
+          }
+        }
+      },
+      "title" : "cloneturbotaxfilemodel Schema"
+    },
+    "refundbankmodels" : {
+      "type" : "object",
+      "properties" : {
+        "refundbanks" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/refundbankmodel"
+          }
+        }
+      },
+      "title" : "refundbankmodels schema"
+    },
+    "turbotaxfileresponsemodel" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "additionalProp1" : {
+          "type" : "string"
+        },
+        "additionalProp2" : {
+          "type" : "string"
+        },
+        "additionalProp3" : {
+          "type" : "string"
+        }
+      },
+      "title" : "turbotaxfileresponsemodel Schema"
+    },
+    "offermodels" : {
+      "type" : "object",
+      "properties" : {
+        "offers" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/offermodel"
+          }
+        }
+      },
+      "title" : "offermodels schema"
+    },
+    "rolemodels" : {
+      "type" : "object",
+      "properties" : {
+        "roles" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/rolemodel"
+          }
+        }
+      },
+      "title" : "rolemodels schema"
+    },
+    "calculationmodel" : {
+      "type" : "object",
+      "properties" : {
+        "payment_method" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "string"
+        },
+        "user_name" : {
+          "type" : "string"
+        },
+        "birth_day" : {
+          "type" : "string"
+        },
+        "gender" : {
+          "type" : "string"
+        },
+        "visit_from" : {
+          "type" : "string"
+        },
+        "ssn" : {
+          "type" : "string"
+        },
+        "total_amount" : {
+          "type" : "number"
+        },
+        "offer_name" : {
+          "type" : "number"
+        },
+        "offer_id" : {
+          "type" : "number"
+        },
+        "filer_record_id" : {
+          "type" : "string"
+        },
+        "coupon_discount" : {
+          "type" : "number"
+        },
+        "orther_discount" : {
+          "type" : "number"
+        },
+        "coupon_id" : {
+          "type" : "string"
+        }
+      },
+      "title" : "calculationmodel Schema"
+    },
+    "forgotmodel" : {
+      "type" : "object",
+      "properties" : {
+        "user_name" : {
+          "type" : "string"
+        }
+      },
+      "title" : "forgotmodel Schema"
+    },
+    "permissionmodel" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "permission_name" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "string"
+        }
+      },
+      "title" : "permissionmodel Schema"
+    },
+    "offermodel" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "offer_name" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "string"
+        }
+      },
+      "title" : "offermodel Schema"
+    },
+    "tokenmodelres" : {
+      "type" : "object",
+      "properties" : {
+        "id_token" : {
+          "type" : "string"
+        },
+        "access_token" : {
+          "type" : "string"
+        },
+        "refresh_token" : {
+          "type" : "string"
+        },
+        "token_type" : {
+          "type" : "string"
+        },
+        "expire_in" : {
+          "type" : "number"
+        }
+      },
+      "title" : "responsetokenmodel Schema"
+    },
+    "couponmodels" : {
+      "type" : "object",
+      "properties" : {
+        "coupons" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/couponmodel"
+          }
+        }
+      },
+      "title" : "couponmodels schema"
+    },
+    "turbotaxfilemodel" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "file_name" : {
+          "type" : "string"
+        },
+        "content" : {
+          "type" : "string"
+        },
+        "content_type" : {
+          "type" : "string"
+        },
+        "file_size" : {
+          "type" : "string"
+        },
+        "user_name" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "string"
+        }
+      },
+      "title" : "turbotaxfilemodel Schema"
+    },
+    "taxreturnmodel" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "user_id" : {
+          "type" : "string"
+        },
+        "create_date" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "string"
+        }
+      },
+      "title" : "taxreturnmodel Schema"
+    },
+    "refundbankmodel" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "bank_name" : {
+          "type" : "string"
+        },
+        "bank_code" : {
+          "type" : "string"
+        },
+        "account" : {
+          "type" : "string"
+        },
+        "tax_code" : {
+          "type" : "string"
+        },
+        "refund_amount" : {
+          "type" : "number"
+        },
+        "status" : {
+          "type" : "boolean"
+        },
+        "amount_fee" : {
+          "type" : "number"
+        },
+        "expired_date" : {
+          "type" : "number"
+        }
+      },
+      "title" : "refundbankmodel Schema"
+    },
+    "rolemodel" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "role_name" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "string"
+        }
+      },
+      "title" : "rolemodel Schema"
+    },
+    "groupmodel" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "group_name" : {
+          "type" : "string"
+        },
+        "role_id" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "string"
+        }
+      },
+      "title" : "groupmodel Schema"
+    }
+  }
+}
